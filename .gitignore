@@ -1,0 +1,6 @@
+vivado/
+**vivado/**
+*/vivado/*
+
+docker-compose.yaml
+*/docker-compose.yaml
