@@ -1,6 +1,8 @@
 #!/bin/bash
 
 mkdir vivado
+mkdir installer
+
 
 cat <<EOF >docker-compose.yaml
 
