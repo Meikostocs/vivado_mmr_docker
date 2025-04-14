@@ -4,3 +4,6 @@ vivado/
 
 docker-compose.yaml
 */docker-compose.yaml
+
+*/installer/*
+*/*installer*/*

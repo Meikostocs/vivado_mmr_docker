@@ -3,7 +3,6 @@
 mkdir vivado
 
 cat <<EOF >docker-compose.yaml
-version: '3.9'
 
 services:
   pc:
