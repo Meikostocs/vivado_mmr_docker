@@ -11,7 +11,7 @@ services:
     build: 
       context: .
       args:
-        SETUP_FILE: vivado2023_2.bin
+        SETUP_FILE: installer/vivado2023_2.bin
     environment:
       - DISPLAY=${DISPLAY}
       - XAUTHORITY=/tmp/.docker.xauth
