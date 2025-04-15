@@ -3,8 +3,6 @@ FROM ubuntu:20.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-ARG SETUP_FILE
-
 RUN apt-get update
 RUN apt-get install -y \
 	libtinfo5 \
@@ -59,18 +57,21 @@ RUN apt-get install -y \
 	libudev-dev \
 	xauth \
 	libcanberra-gtk-module \
-	libcanberra-gtk3-module
+	libcanberra-gtk3-module \
+	openjdk-11-jre
 
 
 RUN locale-gen "en_US.UTF-8"
 
 RUN useradd -ms /bin/bash mmr -G sudo
 RUN echo "mmr:mmr" | chpasswd
-COPY ./${SETUP_FILE} /home/mmr
 
+RUN chown mmr:mmr /home/mmr -R
+
+COPY --chown=mmr:mmr ./installer /home/mmr
+COPY --chown=mmr:mmr entrypoint.sh /home/mmr/
+RUN chown mmr:mmr /opt -R
 
 USER mmr
-WORKDIR /opt
 
-CMD ["/bin/bash"]
-
+ENTRYPOINT ["/home/mmr/entrypoint.sh"]

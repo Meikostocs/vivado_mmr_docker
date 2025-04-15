@@ -1,12 +1,16 @@
 #!/bin/bash
 
+
+
 if [ ! -d ./vivado ]; then
+  echo "[+] Created vivado directory"
   mkdir vivado
 fi
 
 if [ ! -d ./installer ]; then
   mkdir installer
-  echo "[+] create installer directory: installer vivado here"
+  cp install_config.txt installer/
+  echo "[+] Created installer directory; Put Vivado installer here"
 fi
 
 
