@@ -70,7 +70,7 @@ COPY ./${SETUP_FILE} /home/mmr
 
 
 USER mmr
-WORKDIR /home/mmr
+WORKDIR /opt
 
 CMD ["/bin/bash"]
 

@@ -1,7 +1,5 @@
 #!/bin/bash
 
 xhost +local:
-sudo docker-compose up -d 
-sudo docker exec -it vivado bash
-
-
+docker compose up -d
+docker attach vivado
